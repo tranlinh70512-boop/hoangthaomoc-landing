@@ -3,7 +3,7 @@
 
 const FORM_LINK = 'https://docs.google.com/forms/d/1mC3vI0kk0Gwbd-1cDbslDNfwTJ9qxhFDSZoqbi4ugHM/viewform';
 // Không tự gửi dữ liệu sang máy chủ lạ. Mở Google Form khi người dùng gửi biểu mẫu.
-const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyUSuk65sIrBRiBVUpbkAV_6O5NzuyDcKVLmeK4zmry5AzM9MkLofHoGxLPnK5ab2wo/exec';
+const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx-q0buTvtBsxocQDI3xu9vJMwsTOFluTXMTpkWO9zlyCvwiTWa9sFOPh71dYOCiTpR/exec';
 
 const form = document.getElementById('leadForm');
 const statusEl = document.getElementById('formStatus');
