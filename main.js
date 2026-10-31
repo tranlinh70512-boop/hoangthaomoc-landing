@@ -2,6 +2,8 @@
 // Gửi dữ liệu về Google Form/Sheet qua Apps Script Web App
 
 const FORM_LINK = 'https://docs.google.com/forms/d/1mC3vI0kk0Gwbd-1cDbslDNfwTJ9qxhFDSZoqbi4ugHM/viewform';
+// Không tự gửi dữ liệu sang máy chủ lạ. Mở Google Form khi người dùng gửi biểu mẫu.
+const FORM_ENDPOINT = null;
 
 const form = document.getElementById('leadForm');
 const statusEl = document.getElementById('formStatus');
@@ -42,6 +44,11 @@ async function submitForm() {
   data.append('source', 'landing-hoangthaomoc');
 
   try {
+    if (!FORM_ENDPOINT) {
+      window.open(FORM_LINK, '_blank', 'noopener,noreferrer');
+      showToast('Đã mở biểu mẫu liên hệ an toàn.', 'success');
+      return;
+    }
     await fetch(FORM_ENDPOINT, {
       method: 'POST',
       mode: 'no-cors',
